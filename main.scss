@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    width: 45vw;
+    height: 7vh;
+    display: grid;
+    grid-column: repeat(1fr, 4);
+    grid-row: repeat(1fr, 6);
+    /* grid-column: 25vw 25vw 25vw 25vw;
+    grid-row: 25vw 25vw 25vw 25vw 25vw 25vw; */
+    grid-gap: 10px;
+    // background-color: #1C1C1C;
+    background-color: white;
+    padding: 5rem;
+}
+
+button {
+    padding: 10px;
+    color: white;
+}
+
+button:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.operator {
+    background-color: #FF9500;
+}
+
+.grey {
+    background-color: #D4D4D2;
+}
+
+.number {
+    background-color: #505050;
+}
+
+
+
+.display__text {
+    /* background-color: black; */
+    grid-area: 1 / 1 / 2 / 5;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 0px 5px 0px 5px;
+    font-size: 30px;
+    text-align: right;
+    color: pink;
+    width: 95vw;
+    // height: 30px;
+    margin: 0 5px 5px 5px;
+}
+
+.c__keypad {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.seven__keypad {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.four__keypad {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.one__keypad {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.zero__keypad {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.plusMinus__keypad {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.eight__keypad {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.five__keypad {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.two__keypad {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.percentage__keypad {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.nine__keypad {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.six__keypad {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.three__keypad {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.decimal__keypad {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.divide__keypad {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.multiply__keypad {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.subtract__keypad {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.add__keypad {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.equals__keypad {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+@media screen and (max-width: 500px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        flex-direction: column;
+    }
+
+    main {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        flex-direction: column;
+        // padding: 10px;
+    }
+
+    main {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .display {
+        width: 100vw;
+        height: 100vh;
+        grid-row-gap: 5px;
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 40px;
+    }
+
+    .display__text {
+        font-size: 70px;
+    }
+    
+    button {
+        padding: 10px;
+        border: none;
+        font-size: 25px;
+        height: 85px;
+        width: 85px;
+        border-radius: 50%;
+    }
+
+    .zero__keypad {
+        width: 180px;
+        border-radius: 12px;
+    }
+
+
+}
