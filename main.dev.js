@@ -34,24 +34,59 @@ clear.addEventListener("click", function (event) {
 
 var calculatedNum = 0;
 var firstNum = 0;
-var storedNum = 0; // Displays the numbers
+var storedNum = 0;
+var operator = ""; // Displays the numbers
 
 var numberInput = numbers.forEach(function (button) {
   button.addEventListener("click", function (event) {
+    // console.log(display.innerHTML);
     display.innerHTML += event.target.value;
     firstNum = parseFloat(event.target.value);
   });
 }); // Add operation
+// add.addEventListener("click", function (event) {
+//     display.innerHTML += event.target.value;
+//     storedNum = firstNum;
+//     firstNum = "";
+// });
+// have switch case for the operations then store it and pass it in the equals function
 
-add.addEventListener("click", function (event) {
-  display.innerHTML += event.target.value;
-  storedNum = firstNum;
-  firstNum = "";
+var operatorInput = operators.forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    display.innerHTML += event.target.value;
+    operator = event.target.value;
+    storedNum = firstNum;
+    firstNum = "";
+  });
 }); // Equals operation
+// equals.addEventListener("click", function (event) {
+//     calculatedNum = parseFloat(firstNum) + storedNum;
+//     display.innerHTML = calculatedNum;
+// });
 
 equals.addEventListener("click", function (event) {
-  calculatedNum = parseFloat(firstNum) + storedNum;
-  display.innerHTML = calculatedNum;
+  switch (operator) {
+    case "+":
+      calculatedNum = storedNum + firstNum;
+      display.innerHTML = calculatedNum;
+      break;
+
+    case "-":
+      calculatedNum = firstNum - storedNum;
+      display.innerHTML = calculatedNum;
+      break;
+
+    case "*":
+      calculatedNum = firstNum * storedNum;
+      display.innerHTML = calculatedNum;
+      break;
+
+    case "/":
+      calculatedNum = firstNum / storedNum; // returns decimal 
+
+      display.innerHTML = calculatedNum;
+      break;
+  }
 }); // store the number input displayed and button pushed
 // calculate the 
 // Output the answer

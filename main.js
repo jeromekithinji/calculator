@@ -40,11 +40,13 @@ clear.addEventListener("click", (event) => {
 let calculatedNum = 0;
 let firstNum = 0; 
 let storedNum = 0;
+let operator = "";
 
 
 // Displays the numbers
 const numberInput = numbers.forEach(function (button) {
     button.addEventListener("click", function (event) {
+    // console.log(display.innerHTML);
     display.innerHTML += event.target.value;
     firstNum = parseFloat(event.target.value);
     });
@@ -52,20 +54,49 @@ const numberInput = numbers.forEach(function (button) {
 
 
 // Add operation
-add.addEventListener("click", function (event) {
+// add.addEventListener("click", function (event) {
+//     display.innerHTML += event.target.value;
+//     storedNum = firstNum;
+//     firstNum = "";
+// });
+
+// have switch case for the operations then store it and pass it in the equals function
+
+const operatorInput = operators.forEach(function (button) {
+    button.addEventListener("click", function (event) {
     display.innerHTML += event.target.value;
+    operator = event.target.value;
     storedNum = firstNum;
     firstNum = "";
+    });
 });
-
 
 // Equals operation
+// equals.addEventListener("click", function (event) {
+//     calculatedNum = parseFloat(firstNum) + storedNum;
+//     display.innerHTML = calculatedNum;
+// });
+
 equals.addEventListener("click", function (event) {
-    calculatedNum = parseFloat(firstNum) + storedNum;
-    display.innerHTML = calculatedNum;
+    switch(operator){
+        case("+"): 
+            calculatedNum = storedNum + firstNum; 
+            display.innerHTML = calculatedNum;
+            break;
+        case("-"): 
+            calculatedNum = firstNum - storedNum; 
+            display.innerHTML = calculatedNum;
+            break;
+        case("*"): 
+            calculatedNum = firstNum * storedNum; 
+            display.innerHTML = calculatedNum;
+            break;
+        case("/"): 
+            calculatedNum = firstNum / storedNum; // returns decimal 
+            display.innerHTML = calculatedNum;
+            break;
+    }
 });
-
-
 
 
 
