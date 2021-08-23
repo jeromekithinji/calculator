@@ -18,11 +18,13 @@ var userInp = document.querySelector(".seven__keypad"); // add.addEventListener(
 //     display.innerHTML += event.target.value;
 //     });
 // });
-// Clear button
-
-clear.addEventListener("click", function (event) {
-  display.innerHTML = " ";
-}); // Displays the operators
+// // Clear button
+// clear.addEventListener("click", (event) => {
+//     display.innerHTML = " ";
+//     firstNum = 0;
+//     storedNum = 0;
+// })
+// Displays the operators
 // operators.forEach(function (button) {
 //     button.addEventListener("click", function (event) {
 //     display.innerHTML += event.target.value;
@@ -35,13 +37,20 @@ clear.addEventListener("click", function (event) {
 var calculatedNum = 0;
 var firstNum = 0;
 var storedNum = 0;
-var operator = ""; // Displays the numbers
+var operator = ""; // Clear button
+
+var clearDisplay = clear.addEventListener("click", function (event) {
+  display.innerHTML = " ";
+  firstNum = 0;
+  storedNum = 0;
+}); // Displays the numbers
 
 var numberInput = numbers.forEach(function (button) {
   button.addEventListener("click", function (event) {
     // console.log(display.innerHTML);
     display.innerHTML += event.target.value;
-    firstNum = parseFloat(event.target.value);
+    firstNum = parseFloat(display.innerHTML);
+    console.log("The first no.: " + firstNum);
   });
 }); // Add operation
 // add.addEventListener("click", function (event) {
@@ -49,40 +58,50 @@ var numberInput = numbers.forEach(function (button) {
 //     storedNum = firstNum;
 //     firstNum = "";
 // });
-// have switch case for the operations then store it and pass it in the equals function
+// Equals operation
+
+equals.addEventListener("click", function (event) {
+  calculatedNum = parseFloat(firstNum) + storedNum;
+  display.innerHTML = calculatedNum;
+}); // have switch case for the operations then store it and pass it in the equals function
 
 var operatorInput = operators.forEach(function (button) {
   button.addEventListener("click", function (event) {
-    display.innerHTML += event.target.value;
+    // display.innerHTML = event.target.value;
     operator = event.target.value;
     storedNum = firstNum;
+    console.log("The stored no.: " + storedNum);
     firstNum = "";
+    display.innerHTML = "";
   });
-}); // Equals operation
-// equals.addEventListener("click", function (event) {
-//     calculatedNum = parseFloat(firstNum) + storedNum;
-//     display.innerHTML = calculatedNum;
-// });
-
+});
 equals.addEventListener("click", function (event) {
   switch (operator) {
     case "+":
+      console.log("The first no. is " + firstNum);
+      console.log("The second no. is " + storedNum);
       calculatedNum = storedNum + firstNum;
       display.innerHTML = calculatedNum;
       break;
 
     case "-":
-      calculatedNum = firstNum - storedNum;
+      console.log("The first no. is " + firstNum);
+      console.log("The second no. is " + storedNum);
+      calculatedNum = storedNum - firstNum;
       display.innerHTML = calculatedNum;
       break;
 
     case "*":
+      console.log("The first no. is " + firstNum);
+      console.log("The second no. is " + storedNum);
       calculatedNum = firstNum * storedNum;
       display.innerHTML = calculatedNum;
       break;
 
     case "/":
-      calculatedNum = firstNum / storedNum; // returns decimal 
+      console.log("The first no. is " + firstNum);
+      console.log("The second no. is " + storedNum);
+      calculatedNum = storedNum / firstNum; // returns decimal 
 
       display.innerHTML = calculatedNum;
       break;
