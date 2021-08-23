@@ -8,14 +8,16 @@
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+main {
+  height: 60vh;
+  width: 40vw;
 }
 
 .display {
-  width: 45vw;
-  height: 7vh;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-column: repeat(1fr, 4);
   grid-row: repeat(1fr, 6);
@@ -23,12 +25,18 @@ body {
   grid-row: 25vw 25vw 25vw 25vw 25vw 25vw; */
   grid-gap: 10px;
   background-color: #1C1C1C;
-  padding: 5rem;
 }
 
 button {
   padding: 10px;
   color: white;
+}
+
+.active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 button:active {
@@ -59,7 +67,7 @@ button:active {
   grid-area: 1/1/2/5;
   border-radius: 5px;
   padding: 0px 5px 0px 5px;
-  font-size: 30px;
+  font-size: 5rem;
   text-align: right;
   color: white;
   width: 95vw;

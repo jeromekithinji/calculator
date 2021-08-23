@@ -81,6 +81,7 @@ const operatorInput = operators.forEach(function (button) {
     button.addEventListener("click", function (event) {
     // display.innerHTML = event.target.value;
     operator = event.target.value;
+    // button.classList.add("active");
     storedNum = firstNum;
     console.log("The stored no.: " + storedNum);
     firstNum = "";
