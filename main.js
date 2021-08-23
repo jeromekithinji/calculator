@@ -9,49 +9,20 @@ const multiply = document.querySelector(".multiply__keypad");
 const equals = document.querySelector(".equals__keypad");
 const userInp = document.querySelector(".seven__keypad");
 
-
-// add.addEventListener("click", (event) => {
-//     display.innerHTML += event.target.value;
-// });
-
-// Displays the numbers
-// const numberInput = numbers.forEach(function (button) {
-//     button.addEventListener("click", function (event) {
-//     display.innerHTML += event.target.value;
-//     });
-// });
-
-// // Clear button
-// clear.addEventListener("click", (event) => {
-//     display.innerHTML = " ";
-//     firstNum = 0;
-//     storedNum = 0;
-// })
-
-// Displays the operators
-// operators.forEach(function (button) {
-//     button.addEventListener("click", function (event) {
-//     display.innerHTML += event.target.value;
-//     });
-// });
-
-// Stores 
-// const 
-
-//  when a number is put in and an operator is keyed in then store
+// When a number is put in and an operator is keyed in then store
 let calculatedNum = 0;
 let firstNum = 0; 
 let storedNum = 0;
 let operator = "";
 
-// Clear button
+// Clear button functionality
 const clearDisplay = clear.addEventListener("click", (event) => {
     display.innerHTML = " ";
     firstNum = 0;
     storedNum = 0;
 })
 
-// Displays the numbers
+// Displays the numbers when clicked
 const numberInput = numbers.forEach(function (button) {
     button.addEventListener("click", function (event) {
     // console.log(display.innerHTML);
@@ -61,27 +32,12 @@ const numberInput = numbers.forEach(function (button) {
     });
 });
 
-
-// Add operation
-// add.addEventListener("click", function (event) {
-//     display.innerHTML += event.target.value;
-//     storedNum = firstNum;
-//     firstNum = "";
-// });
-
-// Equals operation
-equals.addEventListener("click", function (event) {
-    calculatedNum = parseFloat(firstNum) + storedNum;
-    display.innerHTML = calculatedNum;
-});
-
-// have switch case for the operations then store it and pass it in the equals function
-
+// Reads the operators
 const operatorInput = operators.forEach(function (button) {
     button.addEventListener("click", function (event) {
     // display.innerHTML = event.target.value;
     operator = event.target.value;
-    // button.classList.add("active");
+    button.classList.add("active");
     storedNum = firstNum;
     console.log("The stored no.: " + storedNum);
     firstNum = "";
@@ -90,7 +46,7 @@ const operatorInput = operators.forEach(function (button) {
 });
 
 
-
+// Calcualtes the expression
 equals.addEventListener("click", function (event) {
     switch(operator){
         case("+"): 
@@ -114,16 +70,8 @@ equals.addEventListener("click", function (event) {
         case("/"): 
             console.log("The first no. is " + firstNum);
             console.log("The second no. is " + storedNum);
-            calculatedNum = storedNum / firstNum; // returns decimal 
+            calculatedNum = storedNum / firstNum; 
             display.innerHTML = calculatedNum;
             break;
     }
 });
-
-
-
-
-// store the number input displayed and button pushed
-
-// calculate the 
-// Output the answer
