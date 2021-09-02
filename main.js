@@ -54,24 +54,28 @@ equals.addEventListener("click", function (event) {
             console.log("The second no. is " + storedNum);
             calculatedNum = storedNum + firstNum; 
             display.innerHTML = calculatedNum;
+            firstNum = calculatedNum;
             break;
         case("-"):
             console.log("The first no. is " + firstNum);
             console.log("The second no. is " + storedNum); 
             calculatedNum = storedNum - firstNum; 
             display.innerHTML = calculatedNum;
+            firstNum = calculatedNum;
             break;
         case("*"):
             console.log("The first no. is " + firstNum);
             console.log("The second no. is " + storedNum); 
             calculatedNum = firstNum * storedNum; 
             display.innerHTML = calculatedNum;
+            firstNum = calculatedNum;
             break;
         case("/"): 
             console.log("The first no. is " + firstNum);
             console.log("The second no. is " + storedNum);
             calculatedNum = storedNum / firstNum; 
             display.innerHTML = calculatedNum;
+            firstNum = calculatedNum;
             break;
     }
 });
