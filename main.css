@@ -63,7 +63,6 @@ button:active {
 .display__text {
   /* background-color: black; */
   grid-area: 1/1/2/5;
-  border-radius: 5px;
   padding: 0px 5px 0px 5px;
   font-size: 5rem;
   text-align: right;
@@ -218,8 +217,9 @@ button:active {
 
   main {
     margin: 0;
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
+    max-width: 70vw;
   }
 }
 @media screen and (max-width: 400px) {

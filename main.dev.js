@@ -73,4 +73,10 @@ equals.addEventListener("click", function (event) {
       display.innerHTML = calculatedNum;
       break;
   }
-});
+}); // Add validation like 2 decimals, having a zero in the begining of a number
+// ability to change the operators when it's already been clicked
+// Add a xero in the beginning
+// add a shake feature if it's wrong
+// add some sort of animation
+// keyboard input apart from the touch input
+// add a del button to remove one number or operator (screenInput.innerHTML = screenInput.innerText.slice(0, -1);)
