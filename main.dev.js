@@ -1,7 +1,7 @@
 "use strict";
 
 // Get the user input and display it (from the buttons)
-var display = document.querySelector(".display__text");
+var display = document.querySelector(".calculator__display");
 var operators = document.querySelectorAll(".operator");
 var numbers = document.querySelectorAll(".number");
 var clear = document.querySelector(".c__keypad");
@@ -17,7 +17,7 @@ var storedNum = 0;
 var operator = ""; // Clear button functionality
 
 var clearDisplay = clear.addEventListener("click", function (event) {
-  display.innerHTML = " ";
+  display.innerHTML = "";
   firstNum = 0;
   storedNum = 0;
 }); // Displays the numbers when clicked
@@ -25,6 +25,7 @@ var clearDisplay = clear.addEventListener("click", function (event) {
 var numberInput = numbers.forEach(function (button) {
   button.addEventListener("click", function (event) {
     // console.log(display.innerHTML);
+    // display.innerHTML = "";
     display.innerHTML += event.target.value;
     firstNum = parseFloat(display.innerHTML);
     console.log("The first no.: " + firstNum);
@@ -39,7 +40,7 @@ var operatorInput = operators.forEach(function (button) {
     storedNum = firstNum;
     console.log("The stored no.: " + storedNum);
     firstNum = "";
-    display.innerHTML = "";
+    display.innerHTML = " ";
   });
 }); // Calcualtes the expression
 

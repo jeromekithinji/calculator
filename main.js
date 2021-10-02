@@ -1,5 +1,5 @@
 // Get the user input and display it (from the buttons)
-const display = document.querySelector(".display__text");
+const display = document.querySelector(".calculator__display");
 const operators = document.querySelectorAll(".operator");
 const numbers = document.querySelectorAll(".number");
 const clear = document.querySelector(".c__keypad");
@@ -17,7 +17,7 @@ let operator = "";
 
 // Clear button functionality
 const clearDisplay = clear.addEventListener("click", (event) => {
-    display.innerHTML = " ";
+    display.innerHTML = "";
     firstNum = 0;
     storedNum = 0;
 })
@@ -26,6 +26,7 @@ const clearDisplay = clear.addEventListener("click", (event) => {
 const numberInput = numbers.forEach(function (button) {
     button.addEventListener("click", function (event) {
     // console.log(display.innerHTML);
+    // display.innerHTML = "";
     display.innerHTML += event.target.value;
     firstNum = parseFloat(display.innerHTML);
     console.log("The first no.: " + firstNum);
@@ -41,7 +42,7 @@ const operatorInput = operators.forEach(function (button) {
     storedNum = firstNum;
     console.log("The stored no.: " + storedNum);
     firstNum = "";
-    display.innerHTML = "";
+    display.innerHTML = " ";
     });
 });
 
