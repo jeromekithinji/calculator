@@ -21,6 +21,7 @@ body {
   gap: 20px;
 }
 .calculator__display {
+  min-height: 165px;
   padding: 10px;
   grid-area: 1/1/2/5;
   background-color: white;
@@ -198,6 +199,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     padding: 30px;
+    height: 100vh;
   }
 
   .calculator {
