@@ -1,5 +1,7 @@
 # JS-Calculator
 
+<img src="./src/assets/images/Calculator-Screenshot.png" alt="Screenshot of application"/>
+
 A calculator implemented using HTML, CSS and JavaScript. It utilises display grid to arrange buttons in the appropriate positions and display flex for responsiveness on both PC and Mobile.
 
 ## Languages/Frameworks Used
